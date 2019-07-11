@@ -1,6 +1,8 @@
 $(document).ready(function(){
     $('.sidenav').sidenav();
     $('.modal').modal();
+    $('select').formSelect();
+    $('.datepicker').datepicker();
     toggleLogin()
 });
 
@@ -102,4 +104,6 @@ function logout() {
     localStorage.removeItem("token")
     toggleLogin()
 }
+
+  
 
