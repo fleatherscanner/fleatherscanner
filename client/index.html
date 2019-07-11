@@ -7,6 +7,8 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="720978110684-7buo2di6fa6mi7oahgkcaspa2u6ebtbe.apps.googleusercontent.com">
 
     <title>FleatherScanner</title>
 </head>
@@ -38,6 +40,8 @@
                     <ul class="right">
                         <li><a href="#">Register</a></li>
                         <li><a href="#">Login</a></li>
+                        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
                         <li><a href="#" id="logout" style="display: none;" class="black-text" onclick="logout()">Logout</a></li>
                     </ul>
                 </div>

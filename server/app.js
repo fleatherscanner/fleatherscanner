@@ -7,7 +7,7 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 const db = mongoose.connection;
 const port = process.env.PORT
-const routes = require('./server/routes/index')
+const routes = require('./routes/index')
 
 
 mongoose.connect('mongodb://localhost:27017/FleatherScanner', {useNewUrlParser: true, useCreateIndex: true});
