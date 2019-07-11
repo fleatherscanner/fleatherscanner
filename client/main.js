@@ -22,3 +22,11 @@ function onSignIn(googleUser) {
         console.log(err)
     })
   }
+
+$(document).ready(function(){
+    $('select').formSelect();
+});
+
+$(document).ready(function(){
+    $('.datepicker').datepicker();
+});

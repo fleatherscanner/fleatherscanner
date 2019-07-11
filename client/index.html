@@ -57,6 +57,43 @@
             <li><a href="#" class="userList">123</a></li>
           </ul>
 
+        <div class="container">
+            <div class="card">
+                <div class="row">
+                    <div class="input-field col s4" style="width: 300px">
+                        <select id="departure-airport">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                    <label>Departure</label>
+                    </div>
+            
+                    <div class="input-field col s4" style="width: 300px">
+                        <select id="arrival-airport">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                    <label>Arrival</label>
+                    </div>  
+    
+                    <div class="col s1">
+                            <label>Date</label>
+                        <input id="departure-date" type="text" class="datepicker" placeholder="date">
+                    </div>
+    
+    
+                    <button class="btn waves-effect waves-light col s1 indigo accent-5 btn-large" type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+            
 
       <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
