@@ -5,3 +5,5 @@ const Controller = require('../controllers/currency-controller.js')
 // // const authorizations = require('../middlewares/authorizations')
 router.post('/currency', Controller.currency)
 // https://api.exchangeratesapi.io/latest?base=IDR
+
+module.exports = router
