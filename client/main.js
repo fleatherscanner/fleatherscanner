@@ -94,6 +94,7 @@ function toggleLogin() {
         $("#login").show()
         $("#logout").text(`Logout`)
         $("#logout").hide()
+        $("#flightDetails").empty()
     }
 }
 
@@ -115,10 +116,13 @@ function listAirport() {
     .done(function(response){
         console.log("masuk ajax")
         response.forEach( a => {
-            $("#arrival").append(`<option value="${a.code}">${a.city} - ${a.name} International Airport</option>`)
+            $("#arrival").append(`<option value="${a.code}:${a.city}">${a.city} - ${a.name} International Airport</option>`)
+            $("#departure").append(`<option value="${a.code}:${a.city}">${a.city} - ${a.name} International Airport</option>`)
         });
     })
     .fail(function(err) {
         console.log(err.responseJSON)
     })
 }
+
+ 

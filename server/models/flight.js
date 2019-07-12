@@ -1,7 +1,7 @@
 const axios = require('axios')
 
 const skyscanner = axios.create({
-    baseURL: 'https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/ID/IDR/en-US',
+    baseURL: 'https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/ID/USD/en-US',
     headers: 
         {
             'X-RapidAPI-Host': 'skyscanner-skyscanner-flight-search-v1.p.rapidapi.com',

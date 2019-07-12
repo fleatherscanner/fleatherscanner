@@ -6,7 +6,7 @@ class FlightController {
         //date yyyy-mm-dd
         Flight.searchRoute(depart, arrive, date)
             .then( data => {
-                res.status(200).json(data)
+                res.status(200).json(data.data)
             })
 
             .catch(next)

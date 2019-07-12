@@ -8,9 +8,15 @@ module.exports = (req, res, next) =>{
             req.headers.decoded = decoded
             next()
         }else{
-            throw new Error('Invalid Token')
+            throw ({
+                code: 400,
+                message: "Invalid Token"
+            })
         }
     }else{
-        throw new Error('Login first')
+        throw ({
+            code: 401,
+            message: "Login First"
+        })
     }
 }
