@@ -107,16 +107,15 @@ function logout() {
 }
 
 function listAirport() {
-    $.ajax("http://localhost:3000/api/airports",{
-        method: "GET"
+    console.log("list airport")
+    $.ajax({
+        method: "GET",
+        url: "http://localhost:3000/api/airports"
     })
-
     .done(function(response){
-        console.log(response)
-        console.log("AMAN")
-        airports.forEach( a => {
-            
-            // $("#arrival-airport").append(`<option value="${a.code}">${a.city} - ${a.name} International Airport</option>`)
+        console.log("masuk ajax")
+        response.forEach( a => {
+            $("#arrival").append(`<option value="${a.code}">${a.city} - ${a.name} International Airport</option>`)
         });
     })
     .fail(function(err) {
