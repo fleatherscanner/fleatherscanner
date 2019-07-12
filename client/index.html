@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,12 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id" content="720978110684-7buo2di6fa6mi7oahgkcaspa2u6ebtbe.apps.googleusercontent.com">
+    <meta name="google-signin-client_id"
+        content="720978110684-7buo2di6fa6mi7oahgkcaspa2u6ebtbe.apps.googleusercontent.com">
 
     <title>FleatherScanner</title>
 </head>
+
 <body>
 
     <!-- NAVBAR -->
@@ -19,7 +22,8 @@
         <div class="nav-wrapper">
             <div class="row">
                 <div class="col s3">
-                    <div data-target="slide-out" class="sidenav-trigger" style="cursor: pointer;"><i class="material-icons white-text">menu</i></div>
+                    <div data-target="slide-out" class="sidenav-trigger" style="cursor: pointer;"><i
+                            class="material-icons white-text">menu</i></div>
                     <div style="font-size: 30px;" class="white-text">FleatherScanner</div>
                 </div>
 
@@ -34,115 +38,105 @@
                                 </div>
             
                             </form> -->
-                        </li>  
+                        </li>
                     </ul>
                 </div>
-                
+
                 <div class="col s4">
                     <ul class="right">
                         <li><a class="modal-trigger" href="#registermodal" id="register">Register</a></li>
                         <li><a class="modal-trigger" href="#loginmodal" id="login">Login</a></li>
 
-                        <li><a href="#" id="logout" style="display: none;" class="white-text" onclick="logout()">Logout</a></li>
+                        <li><a href="#" id="logout" style="display: none;" class="white-text"
+                                onclick="logout()">Logout</a></li>
                     </ul>
                 </div>
-            </div>         
+            </div>
         </div>
-      </nav>
+    </nav>
 
 
 
 
 
 
-      <!-- LOGIN MODAL -->
+    <!-- LOGIN MODAL -->
 
-      <div id="loginmodal" class="modal" style="max-width: 650px;">
-            <div class="modal-content">
-                    <h4>Login</h4>
-                    <div class="row">
-                        <div class="input-field col s12">
-                                <i class="material-icons prefix">account_circle</i>
-                                <input id="usernameLogin" type="text" class="validate">
-                                <label for="usernameLogin">Username</label>
-                        </div>
+    <div id="loginmodal" class="modal" style="max-width: 650px;">
+        <div class="modal-content">
+            <h4>Login</h4>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="usernameLogin" type="text" class="validate">
+                    <label for="usernameLogin">Username</label>
+                </div>
 
-                        <div class="input-field col s12">
-                                <i class="material-icons prefix">vpn_key</i>
-                                <input id="passwordLogin" type="password" class="validate">
-                                <label for="passwordLogin">Password</label>
-                        </div>
-                    </div>
-            </div>
-
-
-            <div class="modal-footer">
-                <div class="row">
-                    <div class="col s2 offset-s8">
-                        <div class="g-signin2" data-onsuccess="onSignIn" style="margin-top: 8px;"></div>
-                    </div>
-                    <div class="col s1" style="margin-left: 4%;">
-                        <a href="#!" class="waves-effect waves-blue btn-flat" onclick="login()">Login</a>
-
-                    </div>
-
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">vpn_key</i>
+                    <input id="passwordLogin" type="password" class="validate">
+                    <label for="passwordLogin">Password</label>
                 </div>
             </div>
-      </div>
+        </div>
 
 
-      <!-- REGISTER MODAL -->
-
-      <div id="registermodal" class="modal" style="max-width: 650px;">
-            <div class="modal-content">
-                    <h4>Register</h4>
-                    <div class="row">
-                        <div class="input-field col s12">
-                                <i class="material-icons prefix">account_circle</i>
-                                <input id="usernameRegister" type="text" class="validate">
-                                <label for="usernameRegister">Username</label>
-                        </div>
-
-                        <div class="input-field col s12">
-                                <i class="material-icons prefix">email</i>
-                                <input id="emailRegister" type="text" class="validate">
-                                <label for="emailRegister">Email</label>
-                        </div>
-
-                        <div class="input-field col s12">
-                                <i class="material-icons prefix">vpn_key</i>
-                                <input id="passwordRegister" type="password" class="validate">
-                                <label for="passwordRegister">Password</label>
-                        </div>
-                    </div>
-            </div>
-
-
-            <div class="modal-footer">
-                <div class="row">
-                    <div class="col s2 offset-s8">
-                        <div class="g-signin2 modal-close" data-onsuccess="onSignIn" style="margin-top: 8px;"></div>
-                    </div>
-                    <div class="col s1" style="margin-left: 3%;">
-                        <a href="#!" class="waves-effect waves-blue btn-flat" onclick="register()">Register</a>
-
-                    </div>
+        <div class="modal-footer">
+            <div class="row">
+                <div class="col s2 offset-s8">
+                    <div class="g-signin2" data-onsuccess="onSignIn" style="margin-top: 8px;"></div>
+                </div>
+                <div class="col s1" style="margin-left: 4%;">
+                    <a href="#!" class="waves-effect waves-blue btn-flat" onclick="login()">Login</a>
 
                 </div>
+
             </div>
-      </div>
+        </div>
+    </div>
 
 
+    <!-- REGISTER MODAL -->
+
+    <div id="registermodal" class="modal" style="max-width: 650px;">
+        <div class="modal-content">
+            <h4>Register</h4>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="usernameRegister" type="text" class="validate">
+                    <label for="usernameRegister">Username</label>
+                </div>
+
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">email</i>
+                    <input id="emailRegister" type="text" class="validate">
+                    <label for="emailRegister">Email</label>
+                </div>
+
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">vpn_key</i>
+                    <input id="passwordRegister" type="password" class="validate">
+                    <label for="passwordRegister">Password</label>
+                </div>
+            </div>
+        </div>
 
 
-      <!-- SIDEBAR -->
+        <div class="modal-footer">
+            <div class="row">
+                <div class="col s2 offset-s8">
+                    <div class="g-signin2 modal-close" data-onsuccess="onSignIn" style="margin-top: 8px;"></div>
+                </div>
+                <div class="col s1" style="margin-left: 3%;">
+                    <a href="#!" class="waves-effect waves-blue btn-flat" onclick="register()">Register</a>
 
-      <ul id="slide-out" class="sidenav">
-            
-            <li><a href="#" class="userList">Search Flights</a></li>
-            <li><a href="#" class="userList">123</a></li>
-            <li><a href="#" class="userList">123</a></li>
-          </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 
         <div class="container">
             <div class="card">
@@ -184,9 +178,36 @@
         </div>
             
 
-      <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- SIDEBAR -->
+
+    <ul id="slide-out" class="sidenav">
+
+        <li><a href="#" class="userList">Search Flights</a></li>
+        <li><a href="#" class="userList">123</a></li>
+        <li><a href="#" class="userList">123</a></li>
+    </ul>
+    <div class="row">
+        <!-- <div class="col s12 m4 l2"><p>s12 m4</p></div> -->
+        <div class="input-field col s12 m4 l2">
+            <form onsubmit="selectCurrency()">
+                    <select id="choose">
+                    </select>
+                    <label>Choose your currency</label>
+                    <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./main.js"></script>
+<<<<<<< HEAD
     <script src="./weather.js"></script>
+=======
+    <script src="./reza.js"></script>
+>>>>>>> f6003f1695e98838a13e00341d99f22dda4537ab
 </body>
+
 </html>
