@@ -1,13 +1,15 @@
 if(process.env.NODE_ENV === "development") {
-    require('dotenv').config()
 }
+require('dotenv').config()
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 const cors = require('cors')
 const db = mongoose.connection;
-const port = process.env.PORT
-const routes = require('./server/routes/index')
+const port = process.env.PORT || 3000
+
+console.log(port)
+const routes = require('./routes/index')
 
 
 mongoose.connect('mongodb://localhost:27017/FleatherScanner', {useNewUrlParser: true, useCreateIndex: true});
@@ -20,7 +22,7 @@ app.use(cors())
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json())
 
-app.use('/', routes)
+app.use('/api', routes)
 
 app.use((err, req, res, next) =>{
     console.log(err.message)
