@@ -1,5 +1,10 @@
 var tes = null
-$(document).ready(function(){
+$(document).ready(function () {
+select(event)
+
+});
+function select(event) {
+    event.preventDefault()
     $.ajax(`http://localhost:3000/api/currency`, {
         method: 'GET'
     })
@@ -11,7 +16,7 @@ $(document).ready(function(){
             // console.log(dataKeluar)
             dataKeluar.forEach(data => {
                 // console.log(data)
-                    $("#choose").append(`
+                $("#choose").append(`
                     <option value="${data}">${data}</option>
                     `)
 
@@ -20,34 +25,35 @@ $(document).ready(function(){
             $('select').formSelect();
             // tes=  $( "#choose" ).val();
             // console.log(tes)
-          
+
         })
-        .fail(function(err){
+        .fail(function (err) {
             console.log(err)
         })
 
-  });
-
-  function selectCurrency() {
-      var selected = $("#choose").val()
-      $.ajax(`http://localhost:3000/api/currency/base`, {
+}
+function selectCurrency(event) {
+    console.log('disini')
+    event.preventDefault()
+    var selected = $("#choose").val()
+    $.ajax(`http://localhost:3000/api/currency/base`, {
         method: 'POST',
         data: {
-            base : 'USD',
-            money : 1,
-            to : selected
+            base: 'USD',
+            money: 100,
+            to: selected
 
         }
     })
         .done(function (data) {
-            
+            console.log(data)
             console.log(`${Object.values(data)}`)
             // $(".row").append(`
             // <div>${Object.values(data)}</div>
             // `)
         })
-        .fail(function(err){
+        .fail(function (err) {
             console.log(err)
         })
-      console.log(selected)
-  }
+    console.log(selected)
+}
