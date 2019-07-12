@@ -51,3 +51,10 @@ $(document).ready(function(){
         })
       console.log(selected)
   }
+
+function test() {
+    $("#choose").change(function() {
+        var val = $("#choose").val()
+        console.log(val)
+    })
+}

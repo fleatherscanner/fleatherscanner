@@ -10,6 +10,12 @@ class WeatherController {
             url: `${baseUrl}/search/?query=${city}`
         })
         .then(response =>{
+            if(response.data.length === 0 || !response.data) {
+                throw({
+                    code: 404,
+                    message: "City/forecast not found"
+                })
+            }
             var woeid = response.data[0].woeid
             return axios.request({
                 method: "GET",
