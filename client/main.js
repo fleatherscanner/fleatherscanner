@@ -4,6 +4,7 @@ $(document).ready(function(){
     $('select').formSelect();
     $('.datepicker').datepicker();
     toggleLogin()
+    listAirport()
 });
 
 var baseUrl = "http://localhost:3000/api"
@@ -105,5 +106,19 @@ function logout() {
     toggleLogin()
 }
 
-  
-
+function listAirport() {
+    console.log("list airport")
+    $.ajax({
+        method: "GET",
+        url: "http://localhost:3000/api/airports"
+    })
+    .done(function(response){
+        console.log("masuk ajax")
+        response.forEach( a => {
+            $("#arrival").append(`<option value="${a.code}">${a.city} - ${a.name} International Airport</option>`)
+        });
+    })
+    .fail(function(err) {
+        console.log(err.responseJSON)
+    })
+}
