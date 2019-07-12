@@ -8,7 +8,7 @@ const airportRouter = require("./airport-route")
 
 router.use('/currency', currency)
 router.use("/users", userRouter)
-router.use("flight", flightRouter)
 router.get("/airports", airportRouter)
+router.use("/flights", flightRouter)
 
 module.exports = router

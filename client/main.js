@@ -7,7 +7,7 @@ $(document).ready(function(){
     listAirport()
 });
 
-const baseUrl = "http://localhost:3000/api"
+var baseUrl = "http://localhost:3000/api"
 
 
 function onSignIn(googleUser) {
