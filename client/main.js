@@ -6,7 +6,7 @@ $(document).ready(function(){
     toggleLogin()
 });
 
-const baseUrl = "http://localhost:3000/api"
+var baseUrl = "http://localhost:3000/api"
 
 
 function onSignIn(googleUser) {

@@ -7,6 +7,6 @@ const flightRouter = require("./flight-route")
 
 router.use('/currency', currency)
 router.use("/users", userRouter)
-router.use("flight", flightRouter)
+router.use("/flights", flightRouter)
 
 module.exports = router
