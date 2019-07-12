@@ -124,6 +124,8 @@ function getWeather(event){
         })
     })
     .fail(function(err) {
+        $("#loading").hide()
+        M.toast({html: err.responseJSON, classes: "red"})
         console.log(err.responseJSON)
     })
 }
