@@ -22,6 +22,18 @@ class ControllerCurrency {
             })
             .catch(next)
     }
+    static getCurrency(req, res, next) {
+        console.log(req.body)
+        // console.log(req.params)
+        console.log('disini')
+        instance.get(`/latest`)
+            .then(({ data }) => {
+                // console.log(Object.entries(data.rates))
+                res.status(200).json(data)
+            })
+            .catch(next)
+    }
+
 
 }
 module.exports = ControllerCurrency
