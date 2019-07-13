@@ -1,9 +1,9 @@
 var tes = null
 $(document).ready(function () {
 select(event)
-
+// selectCurrency()
 });
-function select(event) {
+function select(event, i) {
     event.preventDefault()
     $.ajax(`http://localhost:3000/api/currency`, {
         method: 'GET'
@@ -16,7 +16,7 @@ function select(event) {
             // console.log(dataKeluar)
             dataKeluar.forEach(data => {
                 // console.log(data)
-                $("#choose").append(`
+                $(`#choose${i}`).append(`
                     <option value="${data}">${data}</option>
                     `)
 
@@ -32,22 +32,26 @@ function select(event) {
         })
 
 }
-function selectCurrency(event) {
-    console.log('disini')
-    event.preventDefault()
-    var selected = $("#choose").val()
+function selectCurrency(i, value) {
+   
+        var selected = $(`#choose${i}`).val()
+        console.log(selected)
+ 
     $.ajax(`http://localhost:3000/api/currency/base`, {
         method: 'POST',
         data: {
             base: 'USD',
-            money: 100,
+            money: value,
             to: selected
 
         }
     })
         .done(function (data) {
             console.log(data)
-            console.log(`${Object.values(data)}`)
+            // console.log(`${Object.values(data)}`)
+            var num = Math.floor(+Object.values(data))
+            var string = numeral(num).format("0,0")
+            $(`#cost${i}`).text(Object.keys(data)[0] + " " + string)
             // $(".row").append(`
             // <div>${Object.values(data)}</div>
             // `)
@@ -55,5 +59,7 @@ function selectCurrency(event) {
         .fail(function (err) {
             console.log(err)
         })
-    console.log(selected)
 }
+
+
+

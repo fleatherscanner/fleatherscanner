@@ -139,41 +139,99 @@
 
 
         <div class="container">
-            <div class="card">
-                <div class="row">
-                    <form onsubmit="getWeather(event)">
-                        <div class="input-field col s4" style="width: 300px">
-                            <select id="departure-airport">
-                                <option value="" disabled selected>Choose your option</option>
-                                <option value="1">Option 1</option>
-                                <option value="2">Option 2</option>
-                                <option value="3">Option 3</option>
-                            </select>
-                        <label>Departure</label>
+            <div class="card" style="min-height: 120px;">
+                <form onsubmit="getWeather(event)" style="margin-left: 1%;">
+                        <div class="row" style="margin-top: 2%;">
+                            <div class="input-field col s4" style="margin-top: 3%;">
+                                <select id="departure" class="airport">
+                                    
+                                </select>
+                            <label>Departure</label>
+                            </div>
+                    
+                            <div class="input-field col s4" style="margin-top: 3%;">
+                                <select id="arrival" class="airport">
+                                </select>
+                            <label>Arrival</label>
+                            </div>  
+            
+                            <div class="col s2" style="margin-top: 1.15%;">
+                                    <label>Date</label>
+                                <input id="departure-date" type="text" class="datepicker" placeholder="date">
+                            </div>
+            
+                            <div class="col s2" style="margin-top: 2%;">
+                                <button class="btn waves-effect waves-light blue" type="submit" name="action" style="margin-top: 11%;">Submit
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
                         </div>
-                
-                        <div class="input-field col s4" style="width: 300px">
-                            <select id="arrival-airport">
-                                <option value="" disabled selected>Choose your option</option>
-                                <option value="1">Option 1</option>
-                                <option value="2">Option 2</option>
-                                <option value="3">Option 3</option>
-                            </select>
-                        <label>Arrival</label>
-                        </div>  
-        
-                        <div class="col s1">
-                                <label>Date</label>
-                            <input id="departure-date" type="text" class="datepicker" placeholder="date">
+                </form>
+            </div>
+            
+
+            <div id="loading" class="row" style="margin-top: 2%; display: none;">
+                <div class="col s2 offset-s5">
+                        <div class="preloader-wrapper small active">
+                                <div class="spinner-layer spinner-blue-only">
+                                  <div class="circle-clipper left">
+                                    <div class="circle"></div>
+                                  </div><div class="gap-patch">
+                                    <div class="circle"></div>
+                                  </div><div class="circle-clipper right">
+                                    <div class="circle"></div>
+                                  </div>
+                                </div>
                         </div>
-        
-        
-                        <button class="btn waves-effect waves-light col s1 indigo accent-5 btn-large" type="submit" id="submitButton" name="action">Submit
-                            <i class="material-icons right">send</i>
-                        </button>
-                    </form>
                 </div>
             </div>
+            
+            <div class="card" id="flightDetails">
+                
+                <!-- <div class="row">
+                        <div class="col s2 push-s7" style="margin-top: 2%;">
+                                <div class="input-field">
+                                        <select id="choose">
+                                        </select>
+                                        <label>Choose your currency</label>
+                                </div>
+                        </div>
+                    <div class="card-content">
+                        <div class="col s3 pull-s2">
+                            <div style="font-size: 20px;"><i class="material-icons cyan-text">flight</i>Garuda Indonesia</div>
+                        </div>
+
+                        <div class="col s2 pull-s2" style="padding-left: 7%;">
+                            <div id="departure-time" style="font-size: 18px;">14.20</div>
+                            <div class="grey-text">Jakarta</div>
+                        </div>
+
+                        <div class="col s1 pull-s2">
+                            <i class="material-icons">send</i>
+                        </div>
+
+                        <div class="col s2 pull-s2">
+                            <div id="departure-time" style="font-size: 18px;">17.20</div>
+                            <div class="grey-text">Bali</div>
+                        </div>
+                        <div class="col s1">
+                            <div style="font-size: 20px">$100</div>
+                        </div>
+
+                        <div class="col s1">
+                            <button class="waves-effect waves-light blue btn">Convert</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="divider"></div> -->
+
+               
+            </div>
+
+            
+
             
         </div>
             
@@ -182,14 +240,14 @@
     <!-- SIDEBAR -->
 
     <ul id="slide-out" class="sidenav">
-
-        <li><a href="#" class="userList">Search Flights</a></li>
-        <li><a href="#" class="userList">123</a></li>
-        <li><a href="#" class="userList">123</a></li>
+        <li><a href="#" class="subheader"><i class="material-icons">wb_sunny</i>FleatherScanner</a></li>
+        <li><div class="divider"></div></li>
+        <li><a href="#" class="userList">Adit</a></li>
+        <li><a href="#" class="userList">Filbert</a></li>
+        <li><a href="#" class="userList">Reza</a></li>
     </ul>
-    <div class="row">
-        
-        <!-- <div class="col s12 m4 l2"><p>s12 m4</p></div> -->
+    <!-- <div class="row">
+        <div class="col s12 m4 l2"><p>s12 m4</p></div>
         <div class="input-field col s12 m4 l2">
             <form onsubmit="selectCurrency(event)">
                     <select id="choose">
@@ -198,11 +256,17 @@
                     <button type="submit">Submit</button>
             </form>
         </div>
-    </div>
+    </div> -->
+
+
+
+
+
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
     <script src="./main.js"></script>
     <script src="./weather.js"></script>
     <script src="./reza.js"></script>
