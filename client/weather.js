@@ -10,7 +10,7 @@ function getWeather(event){
     var date = temp.getDate()
     $.ajax({
         method: "GET",
-        url: `${baseUrl}/flights/weather/newyork/${year}/${month}/${date}`
+        url: `${baseUrl}/flights/weather/new york/${year}/${month}/${date}`
     })
     .done(function(response) {
         console.log(response, "MASUK")
